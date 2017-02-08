@@ -12,6 +12,7 @@
 		AE75FEC61E46522200F43B26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE75FEC41E46522200F43B26 /* Main.storyboard */; };
 		AE75FEC81E46522200F43B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE75FEC71E46522200F43B26 /* Assets.xcassets */; };
 		AE75FECB1E46522200F43B26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE75FEC91E46522200F43B26 /* LaunchScreen.storyboard */; };
+		AEC6BEBD1E49195F0025AE8C /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6BEBC1E49195F0025AE8C /* Brain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		AE75FEC71E46522200F43B26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE75FECA1E46522200F43B26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE75FECC1E46522200F43B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEC6BEBC1E49195F0025AE8C /* Brain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Brain.swift; path = Model/Brain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		AE75FEBF1E46522200F43B26 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				AEC6BEBB1E4919220025AE8C /* Model */,
 				AE75FEC01E46522200F43B26 /* AppDelegate.swift */,
 				AE75FEC21E46522200F43B26 /* ViewController.swift */,
 				AE75FEC41E46522200F43B26 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				AE75FECC1E46522200F43B26 /* Info.plist */,
 			);
 			path = Calculator;
+			sourceTree = "<group>";
+		};
+		AEC6BEBB1E4919220025AE8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AEC6BEBC1E49195F0025AE8C /* Brain.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE75FEC31E46522200F43B26 /* ViewController.swift in Sources */,
+				AEC6BEBD1E49195F0025AE8C /* Brain.swift in Sources */,
 				AE75FEC11E46522200F43B26 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +314,7 @@
 				AE75FED11E46522200F43B26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

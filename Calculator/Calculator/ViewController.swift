@@ -20,7 +20,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var userIsInTheMeddleOfTyping = false;
+    private var userIsInTheMeddleOfTyping = false;
+    
+    private var brain = Brain()
+    
+    private var displayValue: Double {
+        get {
+            return Double(self.display.text!)!
+        }
+        
+        set {
+            self.display.text = String(newValue)
+        }
+    }
     
     @IBOutlet weak var display: UILabel!
     
@@ -39,12 +51,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func performOperation(_ sender: UIButton) {
-        self.userIsInTheMeddleOfTyping = false
-        if let mathematicalSymbol = sender.currentTitle {
-            if mathematicalSymbol == "π" {
-                self.display.text = String(M_PI)
-            }
+        if self.userIsInTheMeddleOfTyping {
+            self.brain.setOperand(operand: self.displayValue)
+            self.userIsInTheMeddleOfTyping = false
         }
+        
+        if let mathematicalSymbol = sender.currentTitle {
+            self.brain.performOperation(symblo: mathematicalSymbol)
+        }
+        
+        self.displayValue = self.brain.result
     }
 
 }

@@ -14,8 +14,10 @@ struct PendingBinaryOperationInfo {
 }
 
 class Brain {
+    typealias PropertyList = AnyObject
     
     private var accumulator = 0.0
+    private var internalProgram = [AnyObject]()
     private var pending: PendingBinaryOperationInfo?
     
     private enum Operatin {
@@ -44,17 +46,47 @@ class Brain {
         }
     }
     
+    private func clear() {
+        self.accumulator = 0.0
+        self.pending = nil
+        self.internalProgram.removeAll()
+    }
+    
     var result: Double {
         get {
             return self.accumulator
         }
     }
     
+    var program: PropertyList {
+        get {
+            return self.internalProgram as Brain.PropertyList
+        }
+        
+        set {
+            self.clear()
+            
+            if let arrayOfOps = newValue as? [AnyObject] {
+                for op in arrayOfOps {
+                    if let operand = op as? Double {
+                        self.setOperand(operand: operand)
+                    } else if let operantion = op as? String {
+                        self.performOperation(symblo: operantion)
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    
     func setOperand(operand: Double) {
         self.accumulator = operand
+        self.internalProgram.append(operand as AnyObject)
     }
     
     func performOperation(symblo: String) {
+        self.internalProgram.append(symblo as AnyObject)
         if let operation = self.operations[symblo] {
             switch operation {
             case .Binary(let function):

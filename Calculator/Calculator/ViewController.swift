@@ -36,6 +36,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
     
+    var savedProbram: Brain.PropertyList?
+    @IBAction func save() {
+        self.savedProbram = self.brain.program
+    }
+    
+    @IBAction func restore() {
+        if self.savedProbram != nil {
+            self.brain.program = self.savedProbram!
+            self.displayValue = self.brain.result
+        }
+    }
+    
     @IBAction func touchDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
         

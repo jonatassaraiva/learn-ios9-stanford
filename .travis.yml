@@ -1,5 +1,4 @@
 language: objective-c
 xcode_workspace: Calculator.xcworkspace
 xcode_scheme: Calculator
-osx_image: xcode7.3
-xcode_sdk: appletvsimulator9.2
+osx_image: xcode8

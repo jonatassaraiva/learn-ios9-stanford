@@ -1,8 +1,3 @@
 language: objective-c
-osx_image: xcode8.1
 xcode_project: Calculator/Calculator.xcodeproj
 xcode_scheme: Calculator
-xcode_sdk: iphonesimulator
-
-script:
-- xcodebuild -project Calculator/Calculator.xcodeproj

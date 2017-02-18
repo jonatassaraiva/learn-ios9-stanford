@@ -10,4 +10,4 @@ before_install:
 
 script:
 - set -o pipefail
-- travis_retry xcodebuild -workspace Calculator.xcworkspace -scheme "Calculator" -destination "platform=iOS Simulator,name=iPhone 6" build-for-testing test | xcpretty
+- travis_retry xcodebuild -workspace Calculator.xcworkspace -scheme "Calculator" -destination "platform=iOS Simulator,name=iPhone 6"

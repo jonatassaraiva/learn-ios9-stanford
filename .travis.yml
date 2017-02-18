@@ -2,7 +2,5 @@ language: objective-c
 osx_image: xcode8
 xcode_sdk: iphonesimulator10.0
 
-before_install:
-- rvm get head
-- brew update
-- brew outdated carthage || brew upgrade carthage
+script:
+- set -o pipefail
